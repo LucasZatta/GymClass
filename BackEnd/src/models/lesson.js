@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const ClassSchema = new mongoose.Schema({
-  className: {
+const LessonSchema = new mongoose.Schema({
+  lessonName: {
     type: String,
     required: true,
   },
@@ -9,7 +9,7 @@ const ClassSchema = new mongoose.Schema({
     type: Array,
     required: true,
   },
-  classSchedule:{
+  lessonSchedule:{
     type: Date,
     required: true
   },
@@ -17,8 +17,12 @@ const ClassSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  maxCapacity: {
+    type: Number,
+    default: 5
+  }
 });
 
 //console.log(mongoose);
-const User = mongoose.model("User", UserSchema);
-module.exports = User;
+const Lesson = mongoose.model("Class", LessonSchema);
+module.exports = Lesson;

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
-const ExerciseSchema = new mongoose.Schema({
-  assignedTeacher: {
+const ExamSchema = new mongoose.Schema({
+  assignedDoc: {
     type: String,
     required: true,
   },
@@ -9,14 +9,9 @@ const ExerciseSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  workoutNumber: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  routine:{
-    type: Array,
-    required: true
+  approval: {
+    type: Boolean,
+    rquired: true
   },
   createdAt: {
     type: Date,
